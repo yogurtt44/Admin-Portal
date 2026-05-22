@@ -1340,7 +1340,6 @@
 <td><span class="status-chip">${r.status}</span></td>
 <td style="display:flex;gap:8px">
 <button class="btn-return" onclick="markReturned('${r.firebaseKey}')">Mark Returned</button>
-<button class="btn-remind">Remind</button>
 </td>
 </tr>`).join("");
     }
@@ -1351,12 +1350,7 @@
       db.ref("reservations/" + id).remove();
       showNotif("Item returned successfully");
     }
-
-    function sendReminder(studentName, item) {
-      // In production: call a Cloud Function / email API here
-      showNotif("Reminder sent to " + studentName + " for " + item);
-    }
-
+    
     // ════════════════════════════════════════
     // INVENTORY MANAGEMENT
     // ════════════════════════════════════════
